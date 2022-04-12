@@ -1,0 +1,13 @@
+Animal作为所有动物最底层的抽象类，所有动物都具有两个逻辑
+1.有吃东西的行为
+2.可查询自己是谁
+
+SimpleAnimalFactory 实现了简单工厂
+与工厂模式相比，缺点在于每当增加新的动物类型，就必须修改代码
+
+AnimalFactory 实现了工厂模式这里可以看到工厂模式的两个典型特征
+1.工厂类中的方法使用的都是经由factorymethod创建的产品抽象。
+本例中buyAnimal()中使用的是createAnimal()创建的Animal对象。该对象具体指代的是Cat还是Dog，
+作为工厂类AnimalFactory来说并不知情，但也不需要知情
+2.用户决定使用使用哪个工厂(CatFactory,DogFactory)就决定了最终的产品是什么，这就是也是工厂模式中子类
+决定产品的体现
