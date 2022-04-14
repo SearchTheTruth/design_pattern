@@ -1,0 +1,15 @@
+Abstract Factory
+提供一个接口用以创建相关或依赖对象的家族而不需要明确指定具体类
+
+本例中PizzaIngredintFactory就扮演了这个接口，
+当用户选定了进入哪种风味的pizza店就餐，也就意味着选定了使用哪个种风味的原料制作pizza
+根据这个这个“决定“的结果，实例化一个具体的原料厂如NYPPizzaIngredintFactory
+
+不同风味的pizza使用的配料不同如面团，蔬菜，肉用的都不一样，但制作的流程如烘烤，包装都是一致的。
+不同风味的pizza所需要的原料直接向原料厂索要即可
+
+本例中PizzaStore的产品是Pizza
+而PizzaIngredintFactory作为抽象出的中间层，它的产物是一族原料产品包括Dough，Vegtable和Meat
+
+Abstract Factory的一个缺点是，想要增加产品类的时候，需要修改很多代码，扩展性不佳，本例中如增加原料Weater
+则需要修改Pizza, Pizza.prepare(), PizzaIngredintFactory, NYP/CHIGOPizzaIngredintFactory
